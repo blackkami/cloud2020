@@ -1,0 +1,33 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud-order-service
+
+
+eureka:
+  client:
+    register-with-eureka: true #将自己注册到EurekaServer
+    fetch-registry: true #从EurekaServer抓取信息，单节点无所谓，集群必须设置为true才能配合Ribbon使用负载均衡
+    service-url:
+      #设置与Eureka Server交互的地址 查询服务和注册服务都需要依赖这个地址
+#      defaultZone: http://localhost:7001/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+
+
+
+#spring:
+#  application:
+#    name: cloud-payment-service
+#  datasource:
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    #    driver-class-name: org.gjt.mm.mysql.Driver
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://127.0.0.1:3306/myTestDB?useUnicode=true&characterEncoding=utf-8&useSSL=false
+#    username: root
+#    password: Root12345678
+#
+#mybatis:
+#  mapper-locations: classpath:mapper/*.xml
+#  type-aliases-package: com.atguigu.springcloud.entities #所有Entity类的包路径
