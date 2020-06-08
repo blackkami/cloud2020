@@ -6,4 +6,6 @@ public interface PaymentService {
 
     public String paymentInfo_Timeout(Integer id);
 
+    public String paymentCircuitBreaker(Integer id);
+
 }
