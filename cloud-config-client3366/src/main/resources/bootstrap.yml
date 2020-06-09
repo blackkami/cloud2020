@@ -1,16 +1,15 @@
 server:
-  port: 3344
+  port: 3366
 
 spring:
   application:
-    name: cloud-config-center
+    name: cloud-config-client
   cloud:
     config:
-      server:
-        git:
-          uri: https://github.com/blackkami/SpringCloudConfig.git #Git的"配置仓库"
-          searchPaths: SpringCloudConfig,Lv2_* #搜索目录，对应仓库名
       label: master #读取分支
+      name: application #配置文件名称
+      profile: dev  #读取后缀名称，上述3个综合起来：http://config3344.com:3344/master/application-dev.yml
+      uri: http://config3344.com:3344
   rabbitmq:
     host: localhost
     port: 5672
@@ -22,9 +21,8 @@ eureka:
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka
 
-
 management:
   endpoints:
     web:
       exposure:
-        include: "bus-refresh"  #暴露bus刷新配置的端点
+        include: "*" #暴露监控端点
