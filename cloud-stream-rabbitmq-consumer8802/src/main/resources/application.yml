@@ -1,5 +1,5 @@
 server:
-  port: 8801
+  port: 8802
 
 spring:
   application:
@@ -16,8 +16,8 @@ spring:
                 port: 5672
                 username: guest
                 password: guest
-      bindings:
-        output:
+      bindings:                           #服务整合处理
+        input:                            #通道的名称
           destination: studyExchange      #使用的Exchange名称定义
           content-type: application/json  #消息类型，本例为json，文本则设置"text/plain"
           binder: defaultRabbit           #要绑定的消息服务的具体设置
@@ -27,7 +27,7 @@ eureka:
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka
   instance:
-    instance-id: send-8801.com
+    instance-id: receive-8802.com
     prefer-ip-address: true #访问路径显示ip地址
     lease-renewal-interval-in-seconds: 2 #Eureka客户端向服务端发送心跳的时间间隔，单位为秒（默认30秒）
     lease-expiration-duration-in-seconds: 5 #Eureka服务端在收到最后一次心跳后等待时间上限，单位为秒（默认是90秒），超时将踢除

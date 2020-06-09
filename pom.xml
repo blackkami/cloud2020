@@ -30,6 +30,11 @@
     <module>cloud-config-client3366</module>
     <module>cloud-stream-rabbitmq-provider8801</module>
     <module>cloud-stream-rabbitmq-consumer8802</module>
+    <module>cloud-stream-rabbitmq-consumer8802</module>
+    <module>cloud-stream-rabbitmq-consumer8802</module>
+    <module>suibianjianyigeshishi</module>
+    <module>suibianjianyigeshishi</module>
+    <module>cloud-stream-rabbitmq-consumer8802</module>
   </modules>
 
   <!--统一管理jar包版本-->
