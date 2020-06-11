@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: nacos-config-client
+    name: nacos-config-client       # 注意，nacos server里创建的前缀和这个名字必须一致
   cloud:
     nacos:
       discovery:
@@ -11,6 +11,7 @@ spring:
       config:
         server-addr: localhost:8848 # Nacos作为配置中心地址
         file-extension: yaml        # 指定yaml格式配置
+        group: DEV_GROUP
 
 
 # ${spring.application.name}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension}
