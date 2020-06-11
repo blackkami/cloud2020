@@ -1,4 +1,4 @@
-package com.atguigu.springcloud.alibaba.ccontroller;
+package com.atguigu.springcloud.alibaba.controller;
 
 
 import org.springframework.beans.factory.annotation.Value;
