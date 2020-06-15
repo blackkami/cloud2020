@@ -1,5 +1,5 @@
 server:
-  port: 83
+  port: 84
 
 spring:
   application:
@@ -8,6 +8,10 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8080   # 配置sentinel dashboard地址
+        port: 8719                  # 默认8719端口，如被占用，会从8719一直+1到找到可用端口为止
 
 #消费者将要去访问的微服务名
 service-url:
